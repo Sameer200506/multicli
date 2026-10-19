@@ -1,0 +1,12 @@
+# dependencies / build
+node_modules/
+dist/
+build/
+out/
+
+# misc
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/

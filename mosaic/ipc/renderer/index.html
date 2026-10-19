@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'">
+  <title>Mosaic</title>
+  <link rel="stylesheet" href="desk.css">
+</head>
+<body>
+  <header class="mosaic-header">
+    <div class="header-left">
+      <span class="mosaic-logo">Mosaic</span>
+      <span class="workspace-indicator" id="workspaceIndicator">No workspace</span>
+    </div>
+    <div class="header-center">
+      <button class="icon-btn" id="btnOpenWorkspace" title="Open workspace (⌘O)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg></button>
+      <button class="icon-btn" id="btnNewPane" title="New agent pane (⌘N)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+      <button class="icon-btn" id="btnCommandPalette" title="Command palette (⌘K)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
+    </div>
+    <div class="header-right">
+      <span class="version" id="versionInfo">v0.1.0</span>
+    </div>
+  </header>
+
+  <main class="mosaic-main">
+    <aside class="rail" id="rail" role="navigation" aria-label="Agent sessions">
+      <div class="rail-header">Sessions</div>
+      <ul class="session-list" id="sessionList"></ul>
+    </aside>
+
+    <div class="desk" id="desk" role="main" aria-label="Agent panes">
+      <div class="pane-grid" id="paneGrid"></div>
+    </div>
+
+    <aside class="context-panel" id="contextPanel" aria-label="Shared context">
+      <div class="context-header">Context</div>
+      <div class="topic-list" id="topicList"></div>
+    </aside>
+  </main>
+
+  <footer class="mosaic-footer" id="footer">
+    <div class="shortcuts" id="shortcuts"></div>
+  </footer>
+
+  <div class="modal-overlay" id="modalOverlay" hidden></div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

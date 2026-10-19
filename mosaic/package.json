@@ -1,0 +1,23 @@
+{
+  "name": "mosaic",
+  "version": "0.1.0",
+  "description": "Mosaic — a cross-platform desk where multiple AI agent CLIs run side by side, sharing one context.",
+  "main": "ipc/app.js",
+  "license": "Apache-2.0",
+  "type": "commonjs",
+  "scripts": {
+    "start": "electron .",
+    "smoke": "electron tests/smoke.js",
+    "test": "node --test tests/agents.test.js tests/context.test.js",
+    "test:renderer": "electron tests/renderer.test.js",
+    "verify": "npm test && npm run test:renderer && npm run smoke"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0"
+  },
+  "dependencies": {
+    "node-pty": "^1.0.0",
+    "@xterm/xterm": "^5.5.0",
+    "@xterm/addon-fit": "^0.10.0"
+  }
+}
